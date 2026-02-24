@@ -3,7 +3,15 @@
 
 ---
 
-## ❌ NO "Works on My Machine"
+## NO Emojis
+
+- Agents MUST NOT use emojis in any output: ADRs, PR comments, status updates, handoffs, or generated files.
+- Use plain text alternatives: `[OK]`, `[FAIL]`, `[WARNING]`, `[DONE]`, `[BLOCKED]`.
+- Rationale: emojis break grep, diff readability, and terminal rendering in some environments.
+
+---
+
+## [NO] NO "Works on My Machine"
 
 - Any code change that does not pass a linting check is an **automatic failure**.
 - The Developer MUST run the linter (e.g., `terraform validate`, `tflint`, `pylint`, `eslint`) and attach the successful output to their handoff **before** requesting an Approver review.
@@ -11,7 +19,7 @@
 
 ---
 
-## ❌ NO "Ghost Changes"
+## [NO] NO "Ghost Changes"
 
 - Every single code change — no matter how trivial — MUST have a corresponding entry in `CHANGELOG.md`.
 - Changelog entries must appear under the correct SemVer header (`## [Unreleased]` or `## [X.Y.Z] - YYYY-MM-DD`).
@@ -19,7 +27,7 @@
 
 ---
 
-## ❌ NO Context Leakage
+## [NO] NO Context Leakage
 
 - Agents MUST NOT rely on chat history for task continuity.
 - Before handing off to the next agent, the current agent MUST update `.agent/state/TASK_STATUS.md` with:
@@ -31,7 +39,7 @@
 
 ---
 
-## ❌ NO Security Shortcuts
+## [NO] NO Security Shortcuts
 
 - If a resource CAN be private, it MUST be private.
 - Public access is an **exceptional case** and requires:

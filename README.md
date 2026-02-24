@@ -5,7 +5,7 @@ No agent trusts another's word — evidence, files, and guardrails govern every 
 
 ---
 
-## ⚡ Install into any project
+##  Install into any project
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/magnus-ffcg/ag-multi-agent/main/install.sh | bash
@@ -21,7 +21,7 @@ After install, update the two placeholder URLs in `CHANGELOG.md` to point at you
 
 ---
 
-## 🏗 The Three Agents
+##  The Three Agents
 
 | Role | File | Default Stance |
 |------|------|----------------|
@@ -31,7 +31,7 @@ After install, update the two placeholder URLs in `CHANGELOG.md` to point at you
 
 ---
 
-## 🔒 The Four Guardrails
+##  The Four Guardrails
 
 Defined in `.agent/rules/strict_engineering.md`:
 
@@ -42,63 +42,63 @@ Defined in `.agent/rules/strict_engineering.md`:
 
 ---
 
-## 🔄 The Loop
+##  The Loop
 
 ```
 User Task
-    │
-    ▼
-┌─────────────┐   ADR + VERSION updated
-│  ARCHITECT  │──────────────────────────────┐
-└─────────────┘                              │
-                                             ▼
-                                    ┌─────────────────┐
-                                    │   DEVELOPER     │
-                                    │ (pre-flight req)│
-                                    └────────┬────────┘
-                                             │ linter + tests + dry-run
-                                             ▼
-                                    ┌─────────────────┐
-                                    │    APPROVER     │◄──── FIX_LOG.md (gated)
-                                    │ (default REJECT)│
-                                    └────────┬────────┘
-                                             │
-                                    APPROVED ▼
-                                      Loop ends ✅
+    
+    
+   ADR + VERSION updated
+  ARCHITECT  
+                              
+                                             
+                                    
+                                       DEVELOPER     
+                                     (pre-flight req)
+                                    
+                                              linter + tests + dry-run
+                                             
+                                    
+                                        APPROVER      FIX_LOG.md (gated)
+                                     (default REJECT)
+                                    
+                                             
+                                    APPROVED 
+                                      Loop ends [YES]
 ```
 
 Full loop definition: `.agent/workflows/zero_trust_loop.md`
 
 ---
 
-## 📁 Directory Structure
+##  Directory Structure
 
 ```
 your-project/
-├── .agent/
-│   ├── roles/
-│   │   ├── architect.md            # Role: Gatekeeper
-│   │   ├── developer.md            # Role: Implementer
-│   │   └── approver.md             # Role: Adversary
-│   ├── rules/
-│   │   └── strict_engineering.md   # The four guardrails
-│   ├── state/
-│   │   ├── TASK_STATUS.md          # Current agent state (no context leakage)
-│   │   ├── HANDOFF_LOG.md          # Append-only audit trail
-│   │   └── FIX_LOG.md              # Post-rejection correction log
-│   └── workflows/
-│       └── zero_trust_loop.md      # Full agent loop definition
-├── docs/adr/
-│   └── ADR-TEMPLATE.md             # Nygard ADR template
-├── install.sh                      # ← This installer
-├── CHANGELOG.md                    # Keep a Changelog standard
-├── VERSION                         # Single SemVer string
-└── README.md
+ .agent/
+    roles/
+       architect.md            # Role: Gatekeeper
+       developer.md            # Role: Implementer
+       approver.md             # Role: Adversary
+    rules/
+       strict_engineering.md   # The four guardrails
+    state/
+       TASK_STATUS.md          # Current agent state (no context leakage)
+       HANDOFF_LOG.md          # Append-only audit trail
+       FIX_LOG.md              # Post-rejection correction log
+    workflows/
+        zero_trust_loop.md      # Full agent loop definition
+ docs/adr/
+    ADR-TEMPLATE.md             # Nygard ADR template
+ install.sh                      # ← This installer
+ CHANGELOG.md                    # Keep a Changelog standard
+ VERSION                         # Single SemVer string
+ README.md
 ```
 
 ---
 
-## 🚦 Current Status
+##  Current Status
 
 See [`.agent/state/TASK_STATUS.md`](./.agent/state/TASK_STATUS.md) for the live status.
 
@@ -106,7 +106,7 @@ Current version: see [`VERSION`](./VERSION)
 
 ---
 
-## 📋 ADRs
+##  ADRs
 
 Architecture Decision Records are stored in [`docs/adr/`](./docs/adr/).
 Use [`ADR-TEMPLATE.md`](./docs/adr/ADR-TEMPLATE.md) for every new decision.
@@ -114,7 +114,7 @@ Naming convention: `ADR-NNNN-short-title.md` (sequential, zero-padded to 4 digit
 
 ---
 
-## ▶️ Starting the Loop
+##  Starting the Loop
 
 1. Give the Architect a task.
 2. The Architect reads this README and `.agent/state/TASK_STATUS.md`.

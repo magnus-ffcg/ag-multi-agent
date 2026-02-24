@@ -20,9 +20,9 @@ Before anything else, classify the incoming task:
 
 | Tier | Label | Criteria | ADR Required? | Version Bump? |
 |------|-------|----------|---------------|---------------|
-| 1 | `TRIVIAL` | Rename, comment fix, doc update, formatting | ❌ No ADR | PATCH or none |
-| 2 | `MINOR` | New feature, additive config, non-breaking refactor | ✅ Lightweight ADR (3 fields) | MINOR |
-| 3 | `MAJOR` | Breaking change, schema migration, API contract change | ✅ Full Nygard ADR | **MAJOR (mandatory)** |
+| 1 | `TRIVIAL` | Rename, comment fix, doc update, formatting | [NO] No ADR | PATCH or none |
+| 2 | `MINOR` | New feature, additive config, non-breaking refactor | [YES] Lightweight ADR (3 fields) | MINOR |
+| 3 | `MAJOR` | Breaking change, schema migration, API contract change | [YES] Full Nygard ADR | **MAJOR (mandatory)** |
 
 Write the classification and tier label into `.agent/state/TASK_STATUS.md` immediately.
 

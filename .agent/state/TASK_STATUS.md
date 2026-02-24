@@ -1,6 +1,6 @@
 # Task Status — Zero-Trust AI Workflow
 
-> ⚠️ Agents MUST update this file before every handoff. Do NOT rely on chat history.
+> [WARNING] Agents MUST update this file before every handoff. Do NOT rely on chat history.
 
 ---
 

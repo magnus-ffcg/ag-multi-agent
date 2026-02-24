@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.1] - 2026-02-24
+
+### Added
+- Added NO Emojis guardrail to `.agent/rules/strict_engineering.md`.
+
+### Changed
+- Stripped all emojis from workspace files; replaced with plain-text alternatives (`[YES]`, `[NO]`, `[WARNING]`, `[OK]`).
+
+---
+
 ## [0.2.0] - 2026-02-24
 
 ### Added

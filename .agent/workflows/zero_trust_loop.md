@@ -69,7 +69,7 @@ All agents must read `.agent/state/TASK_STATUS.md` as their first action, and up
 
 ### If APPROVED:
 5. Update `.agent/state/TASK_STATUS.md` → `Status: APPROVED`.
-6. Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. ✅
+6. Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. [YES]
 
 ### If REJECTED:
 5. Update `.agent/state/TASK_STATUS.md` → `Status: REJECTED`. List all issues.

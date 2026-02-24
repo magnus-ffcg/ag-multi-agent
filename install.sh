@@ -18,13 +18,13 @@ REPO_RAW="https://raw.githubusercontent.com/magnus-ffcg/ag-multi-agent/main"
 PROJECT_DIR="$(pwd)"
 TODAY="$(date +%Y-%m-%d)"
 
-# ── Colours ──────────────────────────────────────────────────────────────────
+#  Colours 
 GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; RESET='\033[0m'
-ok()   { echo -e "${GREEN}  ✓${RESET} $1"; }
+ok()   { echo -e "${GREEN}  [OK]${RESET} $1"; }
 skip() { echo -e "${YELLOW}  ↷${RESET} $1 (already exists, skipped)"; }
 info() { echo -e "${CYAN}  →${RESET} $1"; }
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+#  Helpers 
 # Download a file from the template repo only if the destination doesn't exist.
 download_if_missing() {
   local src_path="$1"    # path in the template repo
@@ -55,35 +55,35 @@ write_if_missing() {
   ok "Generated → ${dest_path}"
 }
 
-# ── Banner ────────────────────────────────────────────────────────────────────
+#  Banner 
 echo ""
-echo "  ╔══════════════════════════════════════════════════╗"
-echo "  ║   Zero-Trust AI Workflow — Project Installer     ║"
-echo "  ║   https://github.com/magnus-ffcg/ag-multi-agent  ║"
-echo "  ╚══════════════════════════════════════════════════╝"
+echo "  "
+echo "     Zero-Trust AI Workflow — Project Installer     "
+echo "     https://github.com/magnus-ffcg/ag-multi-agent  "
+echo "  "
 echo ""
 info "Installing into: ${PROJECT_DIR}"
 echo ""
 
-# ── 1. Template files (downloaded verbatim — no project-specific content) ────
-echo "── Agent Roles ──────────────────────────────────────"
+#  1. Template files (downloaded verbatim — no project-specific content) 
+echo " Agent Roles "
 download_if_missing ".agent/roles/architect.md"  ".agent/roles/architect.md"
 download_if_missing ".agent/roles/developer.md"  ".agent/roles/developer.md"
 download_if_missing ".agent/roles/approver.md"   ".agent/roles/approver.md"
 
 echo ""
-echo "── Rules & Workflow ─────────────────────────────────"
+echo " Rules & Workflow "
 download_if_missing ".agent/rules/strict_engineering.md" ".agent/rules/strict_engineering.md"
 download_if_missing ".agent/workflows/zero_trust_loop.md" ".agent/workflows/zero_trust_loop.md"
 
 echo ""
-echo "── ADR Template ─────────────────────────────────────"
+echo " ADR Template "
 download_if_missing "docs/adr/ADR-TEMPLATE.md" "docs/adr/ADR-TEMPLATE.md"
 download_if_missing "docs/adr/README.md"        "docs/adr/README.md"
 
-# ── 2. Generated files (fresh, no references to the template repo) ────────────
+#  2. Generated files (fresh, no references to the template repo) 
 echo ""
-echo "── Project Files (generated fresh) ─────────────────"
+echo " Project Files (generated fresh) "
 
 # VERSION
 write_if_missing "VERSION" "0.1.0"
@@ -113,13 +113,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/your-org/your-repo/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/your-org/your-repo/releases/tag/v0.1.0"
 
-# ── 3. State files (blank runtime state, no history from this repo) ───────────
+#  3. State files (blank runtime state, no history from this repo) 
 echo ""
-echo "── Agent State ──────────────────────────────────────"
+echo " Agent State "
 
 write_if_missing ".agent/state/TASK_STATUS.md" "# Task Status — Zero-Trust AI Workflow
 
-> ⚠️ Agents MUST update this file before every handoff. Do NOT rely on chat history.
+> [WARNING] Agents MUST update this file before every handoff. Do NOT rely on chat history.
 
 ---
 
@@ -213,9 +213,9 @@ write_if_missing ".agent/state/FIX_LOG.md" "# Fix Log
 - [ ] Linter output attached
 - [ ] Test output attached"
 
-# ── 4. .gitignore — merge-safe append ────────────────────────────────────────
+#  4. .gitignore — merge-safe append 
 echo ""
-echo "── .gitignore ────────────────────────────────────────"
+echo " .gitignore "
 GITIGNORE_BLOCK="# Zero-Trust AI Workflow (auto-added by install.sh)
 *.tfstate
 *.tfstate.backup
@@ -237,9 +237,9 @@ else
   ok ".gitignore updated (block appended)"
 fi
 
-# ── Done ──────────────────────────────────────────────────────────────────────
+#  Done 
 echo ""
-echo -e "${GREEN}  ✅ Zero-Trust AI Workflow installed successfully.${RESET}"
+echo -e "${GREEN}  [YES] Zero-Trust AI Workflow installed successfully.${RESET}"
 echo ""
 echo "  Next steps:"
 echo "  1. Update CHANGELOG.md repo links (replace 'your-org/your-repo')."

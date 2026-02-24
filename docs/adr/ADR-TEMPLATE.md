@@ -49,26 +49,26 @@
 
 ### Option 1: [Label]
 
-- ✅ [Pro]
-- ✅ [Pro]
-- ❌ [Con]
-- ❌ [Con]
+- [YES] [Pro]
+- [YES] [Pro]
+- [NO] [Con]
+- [NO] [Con]
 
 ### Option 2: [Label]
 
-- ✅ [Pro]
-- ❌ [Con]
+- [YES] [Pro]
+- [NO] [Con]
 
 ### Option 3: [Label]
 
-- ✅ [Pro]
-- ❌ [Con]
+- [YES] [Pro]
+- [NO] [Con]
 
 ---
 
 ## Security Considerations
 
-> ⚠️ This section is MANDATORY. If this ADR involves any resource that could be public-facing, justify why private access is insufficient.
+> [WARNING] This section is MANDATORY. If this ADR involves any resource that could be public-facing, justify why private access is insufficient.
 
 - [ ] All resources default to private access
 - [ ] Public access justified: [N/A | see justification below]
@@ -81,7 +81,7 @@
 
 ## Backward Compatibility
 
-> ⚠️ If this change breaks backward compatibility, the Major version MUST be incremented in `VERSION`.
+> [WARNING] If this change breaks backward compatibility, the Major version MUST be incremented in `VERSION`.
 
 - [ ] Breaking change: **YES / NO**
 - If YES: `VERSION` updated from `X.Y.Z` → `(X+1).0.0`

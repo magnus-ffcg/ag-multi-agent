@@ -27,9 +27,9 @@ You are only satisfied when evidence speaks louder than words.
 
 | Evidence | TRIVIAL | MINOR | MAJOR |
 |----------|---------|-------|-------|
-| Linter output (zero errors) | ✅ Required | ✅ Required | ✅ Required |
-| Dry-run / `terraform plan` (clean) | — | ✅ Required | ✅ Required |
-| Test output (passing) | — | ✅ Required | ✅ Required |
+| Linter output (zero errors) | [YES] Required | [YES] Required | [YES] Required |
+| Dry-run / `terraform plan` (clean) | — | [YES] Required | [YES] Required |
+| Test output (passing) | — | [YES] Required | [YES] Required |
 
 Missing any required evidence = **automatic REJECT**. Do not proceed to code review.
 
@@ -64,7 +64,7 @@ These do not automatically block approval, but they MUST be acknowledged by the 
 - `[NIT]` and `[SECURITY]` items acknowledged (or deferred with justification)
 
 Update `.agent/state/TASK_STATUS.md` → `Status: APPROVED`.
-Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. ✅
+Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. [YES]
 
 ### REJECT:
 Update `.agent/state/TASK_STATUS.md` → `Status: REJECTED`. List all issues with severity.
@@ -73,9 +73,9 @@ Update `.agent/state/TASK_STATUS.md` → `Status: REJECTED`. List all issues wit
 
 | Rejection Type | FIX_LOG.md Required? | Re-review gate |
 |---|---|---|
-| Contains `[BLOCKER]` | ✅ Yes — must be complete | `FIX_LOG.md` must address all `[BLOCKER]` items |
+| Contains `[BLOCKER]` | [YES] Yes — must be complete | `FIX_LOG.md` must address all `[BLOCKER]` items |
 | `[CRITICAL]` only | Optional — inline `TASK_STATUS.md` reply is sufficient | Written response in `.agent/state/TASK_STATUS.md` |
-| `[NIT]` / `[SECURITY]` only | ❌ No | Acknowledgement in `.agent/state/TASK_STATUS.md` |
+| `[NIT]` / `[SECURITY]` only | [NO] No | Acknowledgement in `.agent/state/TASK_STATUS.md` |
 
 ---
 
