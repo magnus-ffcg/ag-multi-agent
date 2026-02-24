@@ -1,6 +1,6 @@
-# ag-multi-agent — Zero-Trust AI Workflow
+# Antigravity: ag-multi-agent — Zero-Trust AI Workflow
 
-A structured multi-agent engineering workspace implementing a **Zero-Trust AI Workflow**.
+A structured multi-agent engineering workspace implementing a **Zero-Trust AI Workflow** for Antigravity.
 No agent trusts another's word — evidence, files, and guardrails govern every transition.
 
 ---
