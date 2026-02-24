@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.2.0] - 2026-02-24
+
 ### Added
 - Initialized Zero-Trust AI Workflow multi-agent workspace structure.
 - Created `.agent/rules/strict_engineering.md` with four negative guardrails.
@@ -21,15 +25,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created `CHANGELOG.md` following Keep a Changelog standard.
 - Created `README.md` as workspace orientation document.
 - Created `HANDOFF_LOG.md` as append-only audit trail of all agent handoffs.
+- Added `install.sh` one-liner installer — downloads template files, generates fresh project-specific files, idempotent and merge-safe.
 
 ### Changed
 - Added YAML model frontmatter to all three role files (`gemini-2.5-pro` for Architect/Approver, `gemini-2.0-flash` for Developer).
-- Added three-tier task severity classification to Architect role (TRIVIAL / MINOR / MAJOR) to eliminate unnecessary ADR overhead on small changes.
-- Added ADR precedent check to Architect role — prior decisions can shortcut re-deliberation.
-- Softened Approver `[CRITICAL]` mandate: must provide explicit clearance reasoning if no risk found, eliminating artificial friction.
-- Softened FIX_LOG.md gate: now only required for `[BLOCKER]` rejections; `[CRITICAL]`-only rejections allow inline `TASK_STATUS.md` response.
-- Updated loop workflow with per-phase model assignments, tier-aware evidence checklist, and HANDOFF_LOG step at every handoff.
-- Developer test bar is now tier-aware: TRIVIAL requires lint only; MINOR requires unit/smoke; MAJOR requires full integration test.
+- Added three-tier task severity classification to Architect role (TRIVIAL / MINOR / MAJOR).
+- Added ADR precedent check to Architect role.
+- Softened Approver `[CRITICAL]` mandate — explicit clearance required if no risk found.
+- Softened FIX_LOG.md gate — only required for `[BLOCKER]` rejections.
+- Moved agent state files (`TASK_STATUS.md`, `HANDOFF_LOG.md`, `FIX_LOG.md`) to `.agent/state/`.
+- Updated loop workflow with per-phase model assignments and tier-aware evidence checklist.
+- Developer test bar is now tier-aware (TRIVIAL: lint only; MINOR: unit/smoke; MAJOR: integration).
 
 ---
 
@@ -38,5 +44,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial workspace scaffold for Zero-Trust AI Workflow.
 
-[Unreleased]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/magnus-ffcg/ag-multi-agent/releases/tag/v0.1.0
