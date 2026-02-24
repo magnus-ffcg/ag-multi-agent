@@ -11,6 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.3] - 2026-02-24
+
+### Changed
+- Moved version bump responsibility from Architect to Approver role.
+- Version bumps now occur after approval, not during planning phase.
+- Enhanced Developer role with mandatory impact analysis for MINOR/MAJOR tiers.
+- Added cross-cutting impact, edge cases, and operational concerns checklists.
+
+### Fixed
+- Fixed premature version bumping that occurred before implementation and approval.
+
+---
+
 ## [0.2.2] - 2026-02-24
 
 ### Fixed
@@ -63,6 +76,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial workspace scaffold for Zero-Trust AI Workflow.
 
-[Unreleased]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.2...v0.2.3
+[0.2.2]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/magnus-ffcg/ag-multi-agent/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/magnus-ffcg/ag-multi-agent/releases/tag/v0.1.0

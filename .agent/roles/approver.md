@@ -63,6 +63,13 @@ These do not automatically block approval, but they MUST be acknowledged by the 
 - All `[CRITICAL]` items addressed
 - `[NIT]` and `[SECURITY]` items acknowledged (or deferred with justification)
 
+**Version Bump (tier-based):**
+- `TRIVIAL` → PATCH bump optional (e.g., `0.1.0` → `0.1.1`)
+- `MINOR` → MINOR bump required (e.g., `0.1.0` → `0.2.0`)
+- `MAJOR` → **MAJOR bump REQUIRED** (e.g., `0.1.0` → `1.0.0`)
+
+Update `VERSION` file and move `CHANGELOG.md` `[Unreleased]` section to versioned release header.
+
 Update `.agent/state/TASK_STATUS.md` → `Status: APPROVED`.
 Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. [YES]
 
@@ -87,6 +94,8 @@ On any decision, append a row to `.agent/state/HANDOFF_LOG.md`.
 - [ ] Evidence checklist verified (tier-aware)
 - [ ] At least one `[CRITICAL]` raised or explicitly cleared (MINOR/MAJOR ADRs)
 - [ ] At least one `[NIT]` and one `[SECURITY]` raised for PRs
+- [ ] Version bumped (if APPROVED) — tier-appropriate
+- [ ] `CHANGELOG.md` moved from `[Unreleased]` to versioned header (if APPROVED)
 - [ ] `.agent/state/TASK_STATUS.md` updated (`APPROVED` or `REJECTED`)
 - [ ] `.agent/state/FIX_LOG.md` required only if `[BLOCKER]` present
 - [ ] `.agent/state/HANDOFF_LOG.md` row appended

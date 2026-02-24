@@ -38,17 +38,7 @@ ADR naming: `docs/adr/ADR-NNNN-<slug>.md` (sequential, zero-padded to 4 digits).
 
 ---
 
-## Step 3: Version Gate
-
-- `TRIVIAL` → PATCH bump optional (e.g., `0.1.0` → `0.1.1`)
-- `MINOR` → MINOR bump required (e.g., `0.1.0` → `0.2.0`)
-- `MAJOR` → **MAJOR bump REQUIRED** (e.g., `0.1.0` → `1.0.0`)
-
-Update `VERSION` and add the release header to `CHANGELOG.md`.
-
----
-
-## Step 4: ADR Precedent Check
+## Step 3: ADR Precedent Check
 
 Before writing a new ADR, scan `docs/adr/` for prior decisions on the same topic.
 If a valid precedent exists, cite it: `Supersedes: ADR-NNNN` or `Extends: ADR-NNNN`.
@@ -78,7 +68,6 @@ Then append a row to `.agent/state/HANDOFF_LOG.md`.
 ## Output Checklist
 - [ ] Task tier classified (TRIVIAL / MINOR / MAJOR)
 - [ ] ADR produced (if MINOR or MAJOR)
-- [ ] `VERSION` updated (if required)
-- [ ] `CHANGELOG.md` entry added under `[Unreleased]`
+- [ ] ADR precedents checked and cited if applicable
 - [ ] `.agent/state/TASK_STATUS.md` updated → `READY_FOR_DEVELOPER`
 - [ ] `.agent/state/HANDOFF_LOG.md` row appended

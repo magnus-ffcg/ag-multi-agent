@@ -24,14 +24,13 @@ All agents must read `.agent/state/TASK_STATUS.md` as their first action, and up
 1. Read `.agent/state/TASK_STATUS.md`.
 2. Read `.agent/roles/architect.md` and `.agent/rules/strict_engineering.md`.
 3. **Classify task tier:**
-   - `TRIVIAL` → skip ADR, no version bump required
-   - `MINOR` → lightweight ADR (Context + Decision + Security), MINOR version bump
-   - `MAJOR` → full Nygard ADR, **MAJOR version bump mandatory**
+   - `TRIVIAL` → skip ADR
+   - `MINOR` → lightweight ADR (Context + Decision + Security)
+   - `MAJOR` → full Nygard ADR
 4. **Check ADR precedents** — scan `docs/adr/` for prior decisions on the same topic. Cite if applicable.
 5. Produce ADR (if MINOR or MAJOR). Save as `docs/adr/ADR-NNNN-<slug>.md`.
-6. Update `VERSION` and `CHANGELOG.md` (if version bump required).
-7. Update `.agent/state/TASK_STATUS.md` → `READY_FOR_DEVELOPER`.
-8. Append row to `.agent/state/HANDOFF_LOG.md`.
+6. Update `.agent/state/TASK_STATUS.md` → `READY_FOR_DEVELOPER`.
+7. Append row to `.agent/state/HANDOFF_LOG.md`.
 
 ---
 
@@ -68,8 +67,13 @@ All agents must read `.agent/state/TASK_STATUS.md` as their first action, and up
 4. Review PR: raise `[NIT]` + `[SECURITY]`.
 
 ### If APPROVED:
-5. Update `.agent/state/TASK_STATUS.md` → `Status: APPROVED`.
-6. Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. [YES]
+5. **Version bump (tier-based):**
+   - `TRIVIAL` → PATCH bump optional (e.g., `0.1.0` → `0.1.1`)
+   - `MINOR` → MINOR bump required (e.g., `0.1.0` → `0.2.0`)
+   - `MAJOR` → MAJOR bump REQUIRED (e.g., `0.1.0` → `1.0.0`)
+6. Update `VERSION` file and move `CHANGELOG.md` `[Unreleased]` to versioned release header.
+7. Update `.agent/state/TASK_STATUS.md` → `Status: APPROVED`.
+8. Append row to `.agent/state/HANDOFF_LOG.md`. Loop ends. [YES]
 
 ### If REJECTED:
 5. Update `.agent/state/TASK_STATUS.md` → `Status: REJECTED`. List all issues.
