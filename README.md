@@ -1,7 +1,23 @@
-# ag-multi-agent — Zero-Trust AI Workflow Workspace
+# ag-multi-agent — Zero-Trust AI Workflow
 
 A structured multi-agent engineering workspace implementing a **Zero-Trust AI Workflow**.
 No agent trusts another's word — evidence, files, and guardrails govern every transition.
+
+---
+
+## ⚡ Install into any project
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/magnus-ffcg/ag-multi-agent/main/install.sh | bash
+```
+
+The installer:
+- Downloads role, rules, workflow, and ADR template files from this repo.
+- **Generates** fresh project-specific files (CHANGELOG, VERSION, state files) — no references to this template repo leak into your project.
+- Skips any file that already exists — **safe to re-run**.
+- Appends a block to your existing `.gitignore` rather than overwriting it.
+
+After install, update the two placeholder URLs in `CHANGELOG.md` to point at your own repo.
 
 ---
 
@@ -58,31 +74,33 @@ Full loop definition: `.agent/workflows/zero_trust_loop.md`
 ## 📁 Directory Structure
 
 ```
-ag-multi-agent/
+your-project/
 ├── .agent/
 │   ├── roles/
-│   │   ├── architect.md       # Role: Gatekeeper
-│   │   ├── developer.md       # Role: Implementer
-│   │   └── approver.md        # Role: Adversary
+│   │   ├── architect.md            # Role: Gatekeeper
+│   │   ├── developer.md            # Role: Implementer
+│   │   └── approver.md             # Role: Adversary
 │   ├── rules/
-│   │   └── strict_engineering.md  # The four guardrails
+│   │   └── strict_engineering.md   # The four guardrails
+│   ├── state/
+│   │   ├── TASK_STATUS.md          # Current agent state (no context leakage)
+│   │   ├── HANDOFF_LOG.md          # Append-only audit trail
+│   │   └── FIX_LOG.md              # Post-rejection correction log
 │   └── workflows/
-│       └── zero_trust_loop.md     # Full agent loop definition
-├── docs/
-│   └── adr/
-│       └── ADR-TEMPLATE.md    # Nygard ADR template
-├── CHANGELOG.md               # Keep a Changelog standard
-├── FIX_LOG.md                 # Post-rejection correction log (template)
-├── TASK_STATUS.md             # Agent handoff continuity (no context leakage)
-├── VERSION                    # Single SemVer string
-└── README.md                  # This file
+│       └── zero_trust_loop.md      # Full agent loop definition
+├── docs/adr/
+│   └── ADR-TEMPLATE.md             # Nygard ADR template
+├── install.sh                      # ← This installer
+├── CHANGELOG.md                    # Keep a Changelog standard
+├── VERSION                         # Single SemVer string
+└── README.md
 ```
 
 ---
 
 ## 🚦 Current Status
 
-See [`.agent/state/TASK_STATUS.md`](./TASK_STATUS.md) for the live status.
+See [`.agent/state/TASK_STATUS.md`](./.agent/state/TASK_STATUS.md) for the live status.
 
 Current version: see [`VERSION`](./VERSION)
 
