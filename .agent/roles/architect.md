@@ -69,7 +69,7 @@ Update `.agent/state/TASK_STATUS.md`:
 ```
 Status: READY_FOR_DEVELOPER
 Tier: TRIVIAL | MINOR | MAJOR
-ADR: docs/adr/ADR-NNNN-<slug>.md  (or "None — TRIVIAL")
+ADR: docs/adr/ADR-NNNN-<slug>.md (or "None — TRIVIAL")
 Task: <one-line summary of what Developer must implement>
 ```
 

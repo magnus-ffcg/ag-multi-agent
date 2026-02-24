@@ -78,7 +78,7 @@ Update `.agent/state/TASK_STATUS.md`:
 ```
 Status: READY_FOR_REVIEW
 Tier: TRIVIAL | MINOR | MAJOR
-ADR: docs/adr/ADR-NNNN-<slug>.md  (or "None — TRIVIAL")
+ADR: docs/adr/ADR-NNNN-<slug>.md (or "None — TRIVIAL")
 What was done: <summary>
 Linter output: <paste or path>
 Dry-run output: <paste or path>
